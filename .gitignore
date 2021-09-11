@@ -39,6 +39,9 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+#
+build/
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -120,6 +123,7 @@ dist
 
 ### https://raw.github.com/github/gitignore/218a941be92679ce67d0484547e3e142b2f5f6f0/Global/VisualStudioCode.gitignore
 
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
