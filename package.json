@@ -90,8 +90,7 @@
     "typesync": "^0.8.0"
   },
   "simple-git-hooks": {
-    "pre-commit": ". ./lint-staged-around",
-    "pre-push": ". ./test-around"
+    "pre-commit": ". ./lint-staged-around"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
