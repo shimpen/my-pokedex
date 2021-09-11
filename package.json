@@ -29,6 +29,7 @@
     "typescript": "^4.2.3",
     "web-vitals": "^1.1.1"
   },
+  "homepage": "http://shimpen.github.io/my-pokedex",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -44,7 +45,8 @@
     "lint:style": "stylelint 'src/**/*.{css,less,sass,scss}'",
     "lint:style:fix": "stylelint --fix 'src/**/*.{css,less,sass,scss}'",
     "preinstall": "typesync || :",
-    "prepare": "simple-git-hooks > /dev/null"
+    "prepare": "simple-git-hooks > /dev/null",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -80,6 +82,7 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "4.2.0",
+    "gh-pages": "^3.2.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "simple-git-hooks": "^2.6.1",
