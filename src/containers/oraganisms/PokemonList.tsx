@@ -13,8 +13,9 @@ const EnhancedPokemonList: VFC<{ url: Url }> = ({ url }) => {
       enabled: true,
     },
   );
-
-  if (!pokemonsResult) return <div>No data</div>; // なんでpokemonResultがundefinedを取りうるのか...
+  if (!pokemonsResult) {
+    throw Error('getPokemonsResult error');
+  }
 
   return <PokemonList result={pokemonsResult} />;
 };
