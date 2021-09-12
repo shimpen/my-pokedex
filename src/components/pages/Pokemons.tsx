@@ -38,7 +38,7 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
         setRegionName(region);
       }
     },
-    onMouseOver: () => prefetch(regionUrlMap[region]),
+    onMouseOver: () => prefetch(regionUrlMap[region]), // Note: ここでgetPokemonsResultのprefetchをした後でそれ以降のget処理を動くようにしたい。
     active: region === regionName,
   }));
 

@@ -12,6 +12,7 @@ const EnhancedPokemons: VFC<{ enablePrefetch?: boolean }> = ({
   const queryClient = useQueryClient();
   const prefetch = (url: Url): void => {
     const load = async (): Promise<void> => {
+      // Note: prefetchがgetPokemonsResultにしか適応できておらず、本当はその応答を利用したgetPokemon, getSpecies, getTypeもprefetchしたい。
       try {
         await queryClient.prefetchQuery([url, 'pokemons'], () =>
           getPokemonsResult(url),
