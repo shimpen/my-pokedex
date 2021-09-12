@@ -1,4 +1,4 @@
-export type Pokemon = {
+export type PokemonDetail = {
   id: number;
   name: string;
   species: {
@@ -34,8 +34,8 @@ const isPokemonType = (arg: unknown): arg is PokemonType => {
   );
 };
 
-const isPokemon = (arg: unknown): arg is Pokemon => {
-  const p = arg as Pokemon;
+const isPokemonDetail = (arg: unknown): arg is PokemonDetail => {
+  const p = arg as PokemonDetail;
 
   return (
     typeof p?.id === 'number' &&
@@ -48,4 +48,4 @@ const isPokemon = (arg: unknown): arg is Pokemon => {
   );
 };
 
-export { isPokemon };
+export { isPokemonDetail };

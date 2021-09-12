@@ -1,16 +1,16 @@
 import ky, { Options } from 'ky';
 import { DEFAULT_API_OPTIONS } from '../config';
 import {
-  isPokemonResults,
-  PokemonResults,
-} from '../../models/raw/pokemon-results';
+  isPokemonsResult,
+  PokemonsResult,
+} from '../../models/raw/pokemons-result';
 
 // const initialUrl = `https://pokeapi.co/api/v2/pokemon?limit=151`;
 
-const getPokemonsRow = async (
+const getPokemonsResult = async (
   url: string,
   options?: Options,
-): Promise<PokemonResults> => {
+): Promise<PokemonsResult> => {
   const mergedOptions = {
     ...DEFAULT_API_OPTIONS,
     ...options,
@@ -18,11 +18,11 @@ const getPokemonsRow = async (
   const response = await ky.get(url, mergedOptions);
   const pokemons = (await response.json()) as unknown[];
 
-  if (!isPokemonResults(pokemons)) {
+  if (!isPokemonsResult(pokemons)) {
     throw Error('API type error');
   }
 
   return pokemons;
 };
 
-export default getPokemonsRow;
+export default getPokemonsResult;
