@@ -13,7 +13,7 @@ import { Divider, Menu } from 'semantic-ui-react';
 import capitalize from 'lodash/capitalize';
 import ErrorBoundary from '../../ErrorBoundary';
 import Spinner from '../molecules/Spinner';
-import PokemonList from '../../containers/oraganisms/PokemonList';
+import EnhancePokemonList from '../../containers/oraganisms/PokemonList';
 import './Pokemons.css';
 import { Region, regionList as RegionList } from '../../data/region-list';
 import regionUrlMap, { Url } from '../../domains/pokeapi/data/region-url-list';
@@ -24,8 +24,7 @@ type Props = {
 };
 
 const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
-  const [regionName, setRegionName] = useState('');
-  // const [input, setInput] = useState('');
+  const [regionName, setRegionName] = useState('all');
   const [isPending, startTransition] = useTransition();
   const ebKey = useRef(0);
 
@@ -33,8 +32,6 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
     key: region,
     name: capitalize(region),
     onClick: () => {
-      // setInput('');
-
       if (regionName) {
         startTransition(() => setRegionName(region));
       } else {
@@ -64,7 +61,7 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
         >
           <SuspenseList>
             <Suspense fallback={<Spinner size="large" />}>
-              <PokemonList
+              <EnhancePokemonList
                 url={
                   regionName
                     ? regionUrlMap[regionName as Region]
