@@ -1,6 +1,3 @@
-// export * from './models/pokemon';
-// export * from './models/pokemons';
-// export { default as getPokemonsResult } from './services/get-pokemons';
 export * from './models/raw/pokemons-result';
 export * from './models/raw/pokemon';
 export * from './models/raw/species';
