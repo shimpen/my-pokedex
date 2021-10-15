@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/button-has-type */
 import { VFC } from 'react';
@@ -22,6 +23,8 @@ const EnhancedPokemonList: VFC<{ url: Url }> = ({ url }) => {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
+    isFetching,
+    status, // 結局Suspenseは使えているのでstatusは不要なはず
   } = useInfiniteQuery(
     // 'pokemons', // move tabs, the query key that 'pokemons' is conflict and cannot re render.
     `pokemons-${url}`, // FIXME: refactor more better query key
@@ -40,14 +43,18 @@ const EnhancedPokemonList: VFC<{ url: Url }> = ({ url }) => {
     throw Error('getPokemonsResult error');
   }
 
-  return (
+  return status === 'loading' ? (
+    <p>Loading...</p>
+  ) : status === 'error' ? (
+    <p>Error</p>
+  ) : (
     <>
-      {pokemonsResults.pages.map((pokemonsResult) => (
+      {pokemonsResults?.pages.map((pokemonsResult) => (
         <PokemonList key={pokemonsResult.next} result={pokemonsResult} />
       ))}
       <div>
         <button
-          onClick={() => fetchNextPage()}
+          onClick={() => fetchNextPage()} // FIXME: もっとみるのボタンをより奥のsuspenseに隠すか、intersectionObserverでの実装を行う
           disabled={!hasNextPage || isFetchingNextPage}
         >
           {isFetchingNextPage
@@ -57,7 +64,7 @@ const EnhancedPokemonList: VFC<{ url: Url }> = ({ url }) => {
             : 'Nothing more to load'}
         </button>
       </div>
-      {/* <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div> */}
+      <div>{isFetching && !isFetchingNextPage ? 'Fetching...' : null}</div>
     </>
   );
 };

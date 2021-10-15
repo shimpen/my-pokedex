@@ -1,4 +1,7 @@
-import { VFC } from 'react';
+/* eslint-disable no-console */
+import Spinner from 'components/molecules/Spinner';
+import ErrorBoundary from 'ErrorBoundary';
+import { Suspense, SuspenseList, VFC } from 'react';
 import { Card } from 'semantic-ui-react';
 
 import EnhancedPokemon from '../../containers/molecules/Pokemon';
@@ -7,11 +10,17 @@ import './PokemonList.css';
 
 const PokemonList: VFC<{ result: PokemonsResult }> = ({ result }) => (
   <>
-    <Card.Group className="cards-container">
-      {result.results.map((pokemon) => (
-        <EnhancedPokemon url={pokemon.url} key={pokemon.name} />
-      ))}
-    </Card.Group>
+    <ErrorBoundary>
+      <SuspenseList>
+        <Suspense fallback={<Spinner size="large" />}>
+          <Card.Group className="cards-container">
+            {result.results.map((pokemon) => (
+              <EnhancedPokemon url={pokemon.url} key={pokemon.name} />
+            ))}
+          </Card.Group>
+        </Suspense>
+      </SuspenseList>
+    </ErrorBoundary>
   </>
 );
 
