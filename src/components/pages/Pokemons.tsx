@@ -1,6 +1,5 @@
 import {
   VFC,
-  // FormEvent,
   Suspense,
   SuspenseList,
   useRef,
@@ -8,7 +7,6 @@ import {
   useTransition,
 } from 'react';
 import { Divider, Menu } from 'semantic-ui-react';
-// import capitalize from 'lodash/capitalize';
 
 import capitalize from 'lodash/capitalize';
 import ErrorBoundary from '../../ErrorBoundary';
@@ -32,6 +30,7 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
     key: region,
     name: capitalize(region),
     onClick: () => {
+      // FIXME: suspenseを2階層に入れていて、その結果transitionが効かない。
       if (regionName) {
         startTransition(() => setRegionName(region));
       } else {
