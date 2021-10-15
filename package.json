@@ -20,7 +20,7 @@
     "react-dom": "^18.0.0-alpha-95d762e40-20210908",
     "react-error-boundary": "^3.1.1",
     "react-helmet": "^6.1.0",
-    "react-query": "^3.13.4",
+    "react-query": "^3.27.0",
     "react-router": "^6.0.0-beta.0",
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.3",
