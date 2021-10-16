@@ -3,8 +3,8 @@ import { Options as KyOptions, NormalizedOptions } from 'ky';
 import camelcaseKeys from 'camelcase-keys';
 
 export const DEFAULT_API_OPTIONS: KyOptions = {
-  timeout: 7000,
-  retry: 2,
+  timeout: 8000,
+  retry: 3,
   hooks: {
     afterResponse: [
       async (
