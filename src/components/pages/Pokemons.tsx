@@ -10,7 +10,6 @@ import { Divider, Menu } from 'semantic-ui-react';
 
 import capitalize from 'lodash/capitalize';
 import ErrorBoundary from '../../ErrorBoundary';
-import Spinner from '../molecules/Spinner';
 import EnhancePokemonList from '../../containers/oraganisms/PokemonList';
 import './Pokemons.css';
 import { Region, regionList as RegionList } from '../../data/region-list';
@@ -59,7 +58,7 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
           key={ebKey.current}
         >
           <SuspenseList>
-            <Suspense fallback={<Spinner size="large" />}>
+            <Suspense fallback="">
               <EnhancePokemonList
                 url={
                   regionName
