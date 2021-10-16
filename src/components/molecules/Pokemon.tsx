@@ -10,7 +10,10 @@ const Pokemon: VFC<{
   types: Type[];
 }> = ({ pokemon, species, types }) => (
   <>
-    <Card className="card-container" key={pokemon.id}>
+    <Card
+      className={`card-container card-container-type-${types[0].name}`}
+      key={pokemon.id}
+    >
       <div className="card-header">
         <div>
           <Card.Meta textAlign="left">{pokemon.id}</Card.Meta>
@@ -35,7 +38,7 @@ const Pokemon: VFC<{
           )}
         </div>
       </div>
-      <div className="card-image">
+      <div className={`card-image card-image-type-${types[0].name}`}>
         <Image
           size="large"
           src={pokemon.sprites.other.officialArtwork.frontDefault}

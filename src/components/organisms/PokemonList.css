@@ -4,7 +4,6 @@
 
 .card-container {
   padding: 12px !important;
-  background-color: rgb(204, 247, 232) !important;
   box-shadow: none !important;
 }
 
@@ -29,7 +28,6 @@
 .card-image {
   margin-top: 4px;
   margin-bottom: 4px;
-  background-color: rgb(209, 209, 209);
   border-radius: 0.28571429rem;
 }
 

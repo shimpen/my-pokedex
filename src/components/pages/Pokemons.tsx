@@ -43,7 +43,7 @@ const Pokemons: VFC<Props> = ({ regionList, prefetch = () => undefined }) => {
   return (
     <>
       <header className="app-header">
-        <h1>PokeDex</h1>
+        <h1>My PokeDex</h1>
       </header>
       <Menu items={menuItems} text />
       <Divider />

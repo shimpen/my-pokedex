@@ -10,9 +10,9 @@
 }
 
 .app-header {
-  padding: 20px;
-  margin-bottom: 4em;
+  padding: 16px;
+  margin-bottom: 16px;
   color: white;
   text-align: center;
-  background-color: #222;
+  background-color: rgb(47, 65, 63);
 }

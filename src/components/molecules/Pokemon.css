@@ -4,8 +4,79 @@
 
 .card-container {
   padding: 12px !important;
-  background-color: rgb(204, 247, 232) !important;
   box-shadow: none !important;
+}
+
+.card-container-type-normal {
+  background-color: #c6c6a7 !important;
+}
+
+.card-container-type-fire {
+  background-color: #f5ac78 !important;
+}
+
+.card-container-type-water {
+  background-color: #9db7f5 !important;
+}
+
+.card-container-type-electric {
+  background-color: #fae078 !important;
+}
+
+.card-container-type-grass {
+  background-color: #a7db8d !important;
+}
+
+.card-container-type-ice {
+  background-color: #bce6e6 !important;
+}
+
+.card-container-type-fighting {
+  background-color: #d67873 !important;
+}
+
+.card-container-type-poison {
+  background-color: #c183c1 !important;
+}
+
+.card-container-type-ground {
+  background-color: #ebd69d !important;
+}
+
+.card-container-type-flying {
+  background-color: #c6b7f5 !important;
+}
+
+.card-container-type-psychic {
+  background-color: #fa92b2 !important;
+}
+
+.card-container-type-bug {
+  background-color: #c6d16e !important;
+}
+
+.card-container-type-rock {
+  background-color: #d1c17d !important;
+}
+
+.card-container-type-ghost {
+  background-color: #a292bc !important;
+}
+
+.card-container-type-dragon {
+  background-color: #a27dfa !important;
+}
+
+.card-container-type-dark {
+  background-color: #a29288 !important;
+}
+
+.card-container-type-steel {
+  background-color: #d1d1e0 !important;
+}
+
+.card-container-type-fairy {
+  background-color: #f4bdc9 !important;
 }
 
 .card-header {
@@ -29,8 +100,80 @@
 .card-image {
   margin-top: 4px;
   margin-bottom: 4px;
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(240, 240, 240);
   border-radius: 0.28571429rem;
+}
+
+.card-image-type-normal {
+  background-color: #e6e6cb !important;
+}
+
+.card-image-type-fire {
+  background-color: #f5d1b8 !important;
+}
+
+.card-image-type-water {
+  background-color: #c1d1f7 !important;
+}
+
+.card-image-type-electric {
+  background-color: #fff1bb !important;
+}
+
+.card-image-type-grass {
+  background-color: #d2eec4 !important;
+}
+
+.card-image-type-ice {
+  background-color: #e7f8f8 !important;
+}
+
+.card-image-type-fighting {
+  background-color: #f3c4c1 !important;
+}
+
+.card-image-type-poison {
+  background-color: #ebd1eb !important;
+}
+
+.card-image-type-ground {
+  background-color: #fff8e4 !important;
+}
+
+.card-image-type-flying {
+  background-color: #e7dfff !important;
+}
+
+.card-image-type-psychic {
+  background-color: #ffccdb !important;
+}
+
+.card-image-type-bug {
+  background-color: #f2f7ce !important;
+}
+
+.card-image-type-rock {
+  background-color: #f5eed2 !important;
+}
+
+.card-image-type-ghost {
+  background-color: #d6d1dd !important;
+}
+
+.card-image-type-dragon {
+  background-color: #e3d6ff !important;
+}
+
+.card-image-type-dark {
+  background-color: #d3cac5 !important;
+}
+
+.card-image-type-steel {
+  background-color: #e8e8f7 !important;
+}
+
+.card-image-type-fairy {
+  background-color: #fce7ec !important;
 }
 
 .card-genera {
